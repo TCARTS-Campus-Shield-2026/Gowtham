@@ -1,1 +1,58 @@
-1
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply font-body text-ink bg-white antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2f5fdb;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Signature shield-notch: a small clipped corner used on cards and
+     key surfaces throughout the app, echoing the shield mark without
+     repeating the literal icon everywhere. */
+  .shield-notch {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 22px) 0,
+      100% 22px,
+      100% 100%,
+      0 100%
+    );
+  }
+
+  .shield-notch-sm {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 14px) 0,
+      100% 14px,
+      100% 100%,
+      0 100%
+    );
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
